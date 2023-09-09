@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "fileutils"
+
+files = [
+  "src/source_paths.rb",
+  "src/rubocop/rubocop.rb"
+]
+
+template = files.map { |file| File.read file }.join "\n"
+
+File.write "template.rb", template
